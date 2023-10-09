@@ -1,0 +1,37 @@
+{
+  "name": "ai-art-gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "DB_FILE=test.sqlite COOKIE_SECRET=abc node --test",
+    "start": "node src/index.js",
+    "lint": "eslint .",
+    "dev": "cross-env DB_FILE='db.sqlite' nodemon src/index.js",
+    "seed": "DB_FILE=db.sqlite node src/database/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^8.7.0",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-kentcdodds": "^20.5.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  }
+}
