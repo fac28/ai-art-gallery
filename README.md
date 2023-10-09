@@ -1,6 +1,6 @@
-# Database challenge
+# Ai Art Gallery
 
-Practice using a SQLite database to power a Node/Express web app.
+<!-- TEMPLATE
 
 ## Setup
 
@@ -9,7 +9,7 @@ Make sure you have Git and Node (v18) installed.
 1. [Use this template](https://github.com/foundersandcoders/database-challenge/generate), clone your copy, cd into it
 1. Run `npm install` to install all the dependencies
 1. Run `npm run seed` to seed the database with some example data
-1. Run `npm run dev` to start the server.  
+1. Run `npm run dev` to start the server.
    This uses the `nodemon` library to auto-restart the server when you save changes.
 
 This app already has the routes and templates created. Your job is to fill out the model functions so the routes can access the data they need.
@@ -82,4 +82,4 @@ Amend the query used in `listProducts` to also calculate the `stock_value`—the
 
 ## Challenge 6: format currencies
 
-The currencies in the products table are just normal numbers, with an arbitrary number of decimal places. It would be more user-friendly to format these as currency values rounded to 2 decimal places. Use the built-in SQLite [`format` function](https://www.sqlite.org/printf.html#formatting_details) to format the `unit_price` and `stock_value` columns as 2-decimal-place GBP (e.g. `£2.57`).
+The currencies in the products table are just normal numbers, with an arbitrary number of decimal places. It would be more user-friendly to format these as currency values rounded to 2 decimal places. Use the built-in SQLite [`format` function](https://www.sqlite.org/printf.html#formatting_details) to format the `unit_price` and `stock_value` columns as 2-decimal-place GBP (e.g. `£2.57`). -->
