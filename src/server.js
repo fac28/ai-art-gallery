@@ -1,6 +1,8 @@
 const express = require("express");
 const server = express();
+
 const Sentry = require('@sentry/node');
+const bodyParser = require("body-parser");
 
 const sentryDSN = process.env.SENTRY_DSN
 Sentry.init({ dsn: sentryDSN });
@@ -8,17 +10,20 @@ Sentry.init({ dsn: sentryDSN });
 // The request handler must be the first middleware on the app
 server.use(Sentry.Handlers.requestHandler());
 
-const homePage = require("./routes/homepage.js");
+const staticHandler = express.static('public');
 
-const bodyParser = require("body-parser");
+
+
+const galleryRoute = require("./routes/gallery");
+
+// Add all the routes below this line
+
 server.use(bodyParser.urlencoded({ extended: false }));
-
-server.use("/", homePage);
-// TO DO
-// - Create routes
-// - Server.use (routes)
+server.use(staticHandler);
+server.use('/', galleryRoute);
 
 
+// No more routes after this line please!
 
 // The error handler must be before any other error middleware and after all controllers
 server.use(Sentry.Handlers.errorHandler());
@@ -30,5 +35,7 @@ server.use(function onError(err, req, res, next) {
     res.statusCode = 500;
     res.end(res.sentry + "");
   });
+
+
 
 module.exports = server;
