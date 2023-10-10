@@ -12,7 +12,6 @@ router.get("/", async (req, res) => {
 
     const ids = artworkDetails.map(image => image.id);
 
-    // Using Promise.all to wait for all displayWorks calls to finish
     const artworkWithImages = await Promise.all(ids.map(async id => {
       const imageDetails = await displayWorks(id);
       return { ...artworkDetails.find(artwork => artwork.id === id),
