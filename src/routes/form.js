@@ -1,16 +1,17 @@
-const express = require('express');
-const router = express.Router();
-const form = require('../templates/form');
-const { insertImage, insertArtworkDetails } = require('../model/images');
+/* eslint-disable no-unused-vars */
+const express = require("express")
+const router = express.Router()
+const form = require("../templates/form")
+const { insertImage, insertArtworkDetails } = require("../model/images")
 
-router.get('/', (req, res) => {
-  return res.send(form());
-});
+router.get("/", (req, res) => {
+  return res.send(form())
+})
 
-router.post('/', (req, res) => {
-  const { username, description, avatar } = req.body;
+router.post("/", (req, res) => {
+  const { username, description, avatar } = req.body
 
   // redirect
-});
+})
 
-module.exports = router;
+module.exports = router

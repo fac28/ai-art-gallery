@@ -1,8 +1,9 @@
-const test = require('node:test');
-const assert = require('node:assert');
-const db = require('../src/database/db');
-const seed = require('../src/database/seed');
-const { selectWork } = require('../src/model/images.js');
+/* eslint-disable no-unused-vars */
+const test = require("node:test")
+const assert = require("node:assert")
+const db = require("../src/database/db")
+const seed = require("../src/database/seed")
+const { selectWork } = require("../src/model/images.js")
 
 // function reset() {
 //   db.exec(`PRAGMA foreign_keys = OFF;`);

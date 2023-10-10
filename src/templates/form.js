@@ -1,5 +1,5 @@
-const form = () =>{
-  return  /*html*/ `
+const form = () => {
+  return /* html */ `
   <!doctype html>
     <html lang="en">
       <head>
@@ -48,4 +48,4 @@ const form = () =>{
   `
 }
 
-module.exports = form;
+module.exports = form

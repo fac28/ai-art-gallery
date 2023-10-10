@@ -1,4 +1,5 @@
-const db = require('../database/db.js');
+/* eslint-disable camelcase */
+const db = require("../database/db.js")
 
 module.exports = {
   // submitWork,
@@ -6,25 +7,25 @@ module.exports = {
   // displayWorks,
   insertImage,
   insertArtworkDetails,
-};
+}
 
-const insert_image = db.prepare(/*sql*/ `
+const insert_image = db.prepare(/* sql */ `
   INSERT INTO images (image_file)
   VALUES ($image_file)
   RETURNING id
-`);
+`)
 
-function insertImage() {
-  return insert_image.get();
+function insertImage () {
+  return insert_image.get()
 }
 
-const insert_artwork_details = db.prepare(/*sql*/ `
+const insert_artwork_details = db.prepare(/* sql */ `
   INSERT INTO image_details (description, image_id, uploaded_by)
   VALUES ($description, $image_id, $uploaded_by)
-`);
+`)
 
-function insertArtworkDetails(image_id) {
-  return insert_artwork_details.run(image_id);
+function insertArtworkDetails (image_id) {
+  return insert_artwork_details.run(image_id)
 }
 
 // const select_artwork = db.prepare(/*sql*/ `

@@ -1,5 +1,5 @@
 const layout = (images) => {
-  return /*html*/ `
+  return /* html */ `
   <!doctype html>
   <html lang="en">
     <head>
@@ -26,12 +26,12 @@ const layout = (images) => {
                 <p class="main__description">${image.description}</p>
               </div>
             </div>
-          `).join('')}
+          `).join("")}
         </div>
       </main>
     </body>
   </html>
-  `;
+  `
 }
 
-module.exports = layout;
+module.exports = layout
