@@ -20,7 +20,7 @@ function insertImage() {
 
 const insert_artwork_details = db.prepare(/*sql*/ `
   INSERT INTO image_details (description, image_id, uploaded_by)
-  VALUES ($description, $image_id, $uploaded_by) WHERE image_id = ?
+  VALUES ($description, $image_id, $uploaded_by)
 `);
 
 function insertArtworkDetails(image_id) {
