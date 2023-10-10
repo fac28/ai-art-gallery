@@ -11,11 +11,10 @@ const layout = (image, username, description) => {
       </head>
       <body>
         <header class="header">
-        <div class="header__row">
-          <h1 class="header__title">AI image gallery</h1>
-        </div>
+          <a href="/submit" class="header__link">Submit</a>
         </header>
           <main class="main">
+          <h1 class="header__title">Welcome to the gallery</h1>
           <div class="main__row">
             <div class="main__image-container">
               <img class="main__image" src="${image}" alt="AI generated image">
