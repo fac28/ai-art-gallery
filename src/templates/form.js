@@ -23,7 +23,7 @@ const form = () => {
               Name
               <span aria-hidden="true">*</span>
             </label>
-            <input id="name" name="name" required />
+            <input class="bottom_border" id="name" name="name" required />
 
             <label for="description">
               Description
@@ -31,15 +31,16 @@ const form = () => {
               <p id="descriptionHelp">Character limit is 200</p>
             </label>
             <textarea
+            class="bottom_border"
               name="description"
               id="description"
               maxlength="200"
               aria-describedby="descriptionHelp"
               required></textarea>
-              <input type="file" class="file_input" id="image" name="image" required />
-              <label class="file_input_label" for="image">Choose File</label>
+              <input type="file" class="file_input " id="image" name="image" required />
+              <label class="file_input_label form_btn" for="image">Choose File</label>
 
-            <button class="submit_btn">Submit</button>
+            <button class="submit_btn form_btn">Submit</button>
           </form>
         </main>
         
