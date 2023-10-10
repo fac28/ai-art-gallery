@@ -36,16 +36,15 @@ const form = () => {
               maxlength="200"
               aria-describedby="descriptionHelp"
               required></textarea>
-            <label for="image">Your image</label>
-            <input type="file" id="image" name="image" required />
+              <input type="file" class="file_input" id="image" name="image" required />
+              <label class="file_input_label" for="image">Choose File</label>
 
-            <button>Submit</button>
+            <button class="submit_btn">Submit</button>
           </form>
         </main>
         
       <body>
   `;
 };
-
 
 module.exports = form;
