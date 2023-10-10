@@ -28,7 +28,7 @@ Sentry.init({
 // The request handler must be the first middleware on the app
 server.use(Sentry.Handlers.requestHandler());
 // TracingHandler creates a trace for every incoming request
-app.use(Sentry.Handlers.tracingHandler());
+server.use(Sentry.Handlers.tracingHandler());
 
 
 const staticHandler = express.static("public");
