@@ -5,7 +5,10 @@ const Sentry = require('@sentry/node');
 const bodyParser = require("body-parser");
 
 const sentryDSN = process.env.SENTRY_DSN
-Sentry.init({ dsn: sentryDSN });
+Sentry.init({ 
+    dsn: sentryDSN,
+    release: "ai-art-gallery@" + process.env.npm_package_version
+});
 
 // The request handler must be the first middleware on the app
 server.use(Sentry.Handlers.requestHandler());
