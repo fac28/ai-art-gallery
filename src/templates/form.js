@@ -39,7 +39,7 @@ const form = () => {
               required></textarea>
 
             <label for="avatar" class="file_input_label form_btn">Choose File</label>
-            <input type="file" class="file_input id="avatar" name="avatar" required />
+            <input type="file" class="file_input" id="avatar" name="avatar" required />
 
             <button class="submit_btn form_btn">Submit</button>
           </form>
