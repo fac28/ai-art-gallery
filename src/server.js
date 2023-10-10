@@ -12,15 +12,15 @@ server.use(Sentry.Handlers.requestHandler());
 
 const staticHandler = express.static('public');
 
-
-
 const galleryRoute = require("./routes/gallery");
+const formRoute = require("./routes/form")
 
 // Add all the routes below this line
 
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(staticHandler);
 server.use('/', galleryRoute);
+server.use('/submit', formRoute)
 
 
 // No more routes after this line please!
@@ -35,7 +35,5 @@ server.use(function onError(err, req, res, next) {
     res.statusCode = 500;
     res.end(res.sentry + "");
   });
-
-
 
 module.exports = server;
