@@ -29,8 +29,6 @@ function insertArtworkDetails(image_id) {
 
 const select_artwork = db.prepare(/*sql*/ `
     SELECT id, description, uploaded_by FROM image_details
-    
-
 `);
 
 // function selectWork() {
