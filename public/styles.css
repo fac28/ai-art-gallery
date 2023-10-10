@@ -29,7 +29,7 @@
 :root {
   --primary-light: #F7EDE2;
   --secondary-light: #F5CAC3;
-  --another-light: white;
+  --another-light: #FCF8F5;
   --primary-dark: #F28482;
   --secondary-dark: #84A59D;
   --header-font:  'Vollkorn', serif;
@@ -130,6 +130,27 @@ Components
 
 .header__title {
   color: #FA5B52;
+}
+
+textarea {
+  resize: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  text-align: center;
+}
+
+input, textarea {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: var(--another-light);
 }
 
 /*------------------------------------*\
