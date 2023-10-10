@@ -10,6 +10,21 @@ Sentry.init({ dsn: sentryDSN });
 // The request handler must be the first middleware on the app
 server.use(Sentry.Handlers.requestHandler());
 
+const transaction = Sentry.startTransaction({
+    op: "test",
+    name: "My First Test Transaction",
+  });
+  
+  setTimeout(() => {
+    try {
+      foo();
+    } catch (e) {
+      Sentry.captureException(e);
+    } finally {
+      transaction.finish();
+    }
+  }, 99);
+
 const staticHandler = express.static('public');
 
 const galleryRoute = require("./routes/gallery");
@@ -35,5 +50,7 @@ server.use(function onError(err, req, res, next) {
     res.statusCode = 500;
     res.end(res.sentry + "");
   });
+
+
 
 module.exports = server;
