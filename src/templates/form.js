@@ -17,7 +17,7 @@ const form = () =>{
         </header>
         <main class="main">
           <h1 class="form__title">Upload your image</h1>
-          <form>
+          <form enctype="multipart/form-data">
             <label for="username">
               Username
             </label>

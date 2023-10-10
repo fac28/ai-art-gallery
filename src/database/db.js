@@ -8,4 +8,6 @@ const schemaPath = join("src", "database", "schema.sql");
 const schema = readFileSync(schemaPath, "utf-8");
 db.exec(schema);
 
+
+
 module.exports = db;
