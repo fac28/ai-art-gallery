@@ -1,21 +1,52 @@
-// Test image file ends
-
 const test = require('node:test');
 const assert = require('node:assert');
-const { submitWork } = require('../src/model/images.js');
+const db = require('../src/database/db');
+const seed = require('../src/database/seed');
+const { selectWork } = require('../src/model/images.js');
 
-test('User can only submit images ending with jpg, png, jpeg', () => {
-  const work = submitWork();
-  //   assert.equal(
-  //     products.length,
-  //     77,
-  //     `received ${products.length} products, expected 77`
-  //   );
-  //   const product = products[0];
-  //   assert.equal(product.id, 1);
-  //   assert.equal(product.name, 'Chai');
-  //   assert.equal(product.quantity_per_unit, '10 boxes x 20 bags');
-  //   assert.ok(product.unit_price);
-  //   assert.equal(product.units_in_stock, 39);
-  //   assert.equal(product.units_on_order, 0);
-});
+// function reset() {
+//   db.exec(`PRAGMA foreign_keys = OFF;`);
+
+//   // Drop and recreate tables
+//   db.exec(`DROP TABLE IF EXISTS images;`);
+//   db.exec(`DROP TABLE IF EXISTS image_details;`);
+
+//   // Create tables with the desired schema
+//   db.exec(`CREATE TABLE IF NOT EXISTS images (...)`);
+//   db.exec(`CREATE TABLE IF NOT EXISTS image_details (...)`);
+
+//   db.exec(`PRAGMA foreign_keys = ON;`);
+
+//   // re-seed the database if needed
+//     db.exec(seed);
+
+// }
+
+// test('Can get all the artworks from the db', () => {
+//   reset();
+//   const artworks = selectWork();
+//   assert.equal(artworks.length > 0, true);
+//   assert.equal(artworks[0].id, 1);
+//   assert.equal(
+//     artworks[0].image_id,
+//     'Gweneth Paltro at night being spooky in the road'
+//   );
+//   assert.equal(artworks[0].uploaded_by, 'GwenXXX');
+// });
+
+// test('Can add a new artwork to the db', () => {
+//   reset();
+//   const testArtwork = {
+//     description: 'Lovely happy ponies bathing in meadow sunlight',
+//     uploaded_by: 'MyLittlePony',
+//   };
+//   submitWork(testArtwork);
+//   const artworks = selectWork();
+//   const newArtwork = artworks.push();
+//   assert.equal(newArtwork.id, 6);
+//   assert.equal(
+//     newArtwork.description,
+//     'Lovely happy ponies bathing in meadow sunlight'
+//   );
+//   assert.equal(newArtwork.uploaded_by, 'MyLittlePony');
+// });

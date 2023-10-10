@@ -2,6 +2,7 @@ const db = require('../database/db.js');
 
 module.exports = { submitWork, selectWork, displayWorks };
 
+
 function submitWork() {
   console.log('Artwork submitted');
 }

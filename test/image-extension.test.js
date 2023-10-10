@@ -1,5 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert');
+const db = require('../src/database/db');
+const seed = require('../src/database/seed');
 const { submitWork } = require('../src/model/images.js');
 
 test('User can only submit images with filenames ending in jpg, jpeg, or png', () => {
