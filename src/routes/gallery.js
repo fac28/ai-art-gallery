@@ -3,11 +3,17 @@ const router = express.Router();
 const layout = require("../templates/gallery");
 
 router.get("/", (req, res) => {
-  // To do
-  const image = "ice.png"
-  const username = 'username'
-  const description = "This is a description"
-  return res.send(layout(image, username, description));
+
+  // TODO: replace this with a call to the database
+  const images = [
+    {url: "ice.png",
+    username: 'username',
+    description: "This is a description"},
+    {url: "ice.png",
+    username: 'username',
+    description: "This is a description"}
+  ]
+  return res.send(layout(images));
 });
 
 module.exports = router;
