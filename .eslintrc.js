@@ -8,8 +8,9 @@ module.exports = {
     {
       env: {
         node: true,
+        browser: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.js", ".eslintrc.cjs"],
       parserOptions: {
         sourceType: "script",
       },
@@ -21,6 +22,7 @@ module.exports = {
   },
   rules: {
     quotes: ["error", "double"],
-    comma-dangle: ["error", "always-multiline"]
-  }
-};
+    "comma-dangle": ["error", "always-multiline"],
+    "semi-style": ["error", "never"],
+  },
+}
