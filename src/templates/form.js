@@ -37,8 +37,9 @@ const form = () => {
               maxlength="200"
               aria-describedby="descriptionHelp"
               required></textarea>
-              <input type="file" class="file_input " id="image" name="image" required />
-              <label class="file_input_label form_btn" for="image">Choose File</label>
+
+            <label for="avatar" class="file_input_label form_btn">Choose File</label>
+            <input type="file" class="file_input id="avatar" name="avatar" required />
 
             <button class="submit_btn form_btn">Submit</button>
           </form>
