@@ -8,7 +8,8 @@ const form = () => {
         <link rel="stylesheet" href="../styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Young+Serif&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display&family=Young+Serif&display=swap" rel="stylesheet">
+        <script defer src="validation.js"></script>
         <title>AI image gallery</title>
       </head>
       <body>
@@ -20,27 +21,31 @@ const form = () => {
           <form enctype="multipart/form-data" method="post">
             <label for="name">
               Name
+              <span aria-hidden="true">*</span>
             </label>
             <input id="name" name="name" required />
 
             <label for="description">
               Description
+              <span aria-hidden="true">*</span>
+              <p id="descriptionHelp">Character limit is 200</p>
             </label>
             <textarea
-              id="description" name="description"
-              rows="5" > 
-            </textarea>
-
-            <label for="avatar">Your image</label>
-            <input type="file" id="avatar" name="avatar">
+              name="description"
+              id="description"
+              maxlength="200"
+              aria-describedby="descriptionHelp"
+              required></textarea>
+            <label for="image">Your image</label>
+            <input type="file" id="image" name="image" required />
 
             <button>Submit</button>
           </form>
-
-
         </main>
+        
       <body>
   `;
 };
+
 
 module.exports = form;

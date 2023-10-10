@@ -32,7 +32,7 @@
   --another-light: #FCF8F5;
   --primary-dark: #F28482;
   --secondary-dark: #84A59D;
-  --header-font:  'Young Serif', serif;
+  --header-font:  'PT Serif', serif;
   --paragraph-font: 'Playfair Display', serif;
 }
 
@@ -50,6 +50,10 @@ h1 {
   margin-left: 1rem;
   font-family: var(--header-font);
   font-size: 3rem;
+}
+
+p {
+  font-size: 0.8rem;
 }
 
 /*------------------------------------*\
@@ -135,6 +139,7 @@ Components
 }
 
 textarea {
+  caret-color: transparent;
   resize: none;
 }
 
@@ -153,6 +158,17 @@ input, textarea {
   padding: 0.5rem;
   border-radius: 5px;
   background-color: var(--another-light);
+  margin: 1rem auto;
+}
+
+[aria-invalid="true"] {
+  border-color: red;
+}
+[aria-invalid="true"] + * {
+  color: red;
+}
+[aria-invalid="true"] + *::before {
+  content: "⚠️ ";
 }
 
 /*------------------------------------*\
