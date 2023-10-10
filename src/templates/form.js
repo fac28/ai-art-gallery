@@ -1,5 +1,5 @@
-const form = () =>{
-  return  /*html*/ `
+const form = () => {
+  return /*html*/ `
   <!doctype html>
     <html lang="en">
       <head>
@@ -18,12 +18,12 @@ const form = () =>{
         </header>
         <main class="main">
           <h1 class="form__title">Upload your image</h1>
-          <form>
-            <label for="username">
-              Username
+          <form enctype="multipart/form-data" method="post">
+            <label for="name">
+              Name
               <span aria-hidden="true">*</span>
             </label>
-            <input id="name" required />
+            <input id="name" name="name" required />
 
             <label for="description">
               Description
@@ -31,11 +31,11 @@ const form = () =>{
               <p id="descriptionHelp">Character limit is 200</p>
             </label>
             <textarea
+              name="description"
               id="description"
               maxlength="200"
               aria-describedby="descriptionHelp"
               required></textarea>
-
             <label for="image">Your image</label>
             <input type="file" id="image" name="image" required />
 
@@ -44,8 +44,8 @@ const form = () =>{
         </main>
         
       <body>
+  `;
+};
 
-  `
-}
 
 module.exports = form;
