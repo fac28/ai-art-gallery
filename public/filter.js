@@ -1,4 +1,4 @@
-const imageContainers = document.querySelectorAll(".gallery-container");
+const imageContainers = document.querySelectorAll(".gallery-child");
 
 function isTagged (tags, userFilter) {
   return tags.split(", ").some(function (tag) {
