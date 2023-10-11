@@ -14,9 +14,9 @@ const form = () => {
       </head>
       <body>
         <header class="header">
-          <a href="/" class="header__link">home</a>
+          <a href="/" class="header__link">Home</a>
         </header>
-        <main class="main">
+        <main class="main main-form">
           <h1 class="form__title">Upload your image</h1>
           <form enctype="multipart/form-data" method="post">
             <label for="name">
@@ -49,7 +49,7 @@ const form = () => {
               <input type="checkbox" name="action[]" id="architecture" value="architecture" /><label for="architecture">Architecture</label><br />
               <input type="checkbox" name="action[]" id="abstract" value="abstract" /><label for="abstract">Abstract</label><br />
             </fieldset>
-            <button class="submit_btn form_btn">Submit</button>
+            <button class="form_btn">Submit</button>
           </form>
         </main>
 
