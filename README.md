@@ -4,7 +4,7 @@ AI Art Gallery is a place to share your AI art.
 
 ## Remote Deployment
 
-~~This app is deployed on fly.io and can be accessed at:~~
+This app is deployed on fly.io and can be accessed at: <https://ai-art-gallery.fly.dev/>
 
 ## Installation
 

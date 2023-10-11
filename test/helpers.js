@@ -4,11 +4,11 @@
 // const db = require(`../${DIR}/database/db.js`);
 
 // function reset() {
-  // db.exec(/*sql*/ `
-  //       DELETE FROM images;
-  //       DELETE FROM image_details;
-  //       DELETE FROM sqlite_sequence WHERE name IN ('images', 'image_details');
-  //   `);
+// db.exec(/*sql*/ `
+//       DELETE FROM images;
+//       DELETE FROM image_details;
+//       DELETE FROM sqlite_sequence WHERE name IN ('images', 'image_details');
+//   `);
 // }
 
 // async function request(pathname, options = {}) {

@@ -1,12 +1,12 @@
-const test = require('node:test');
-const assert = require('node:assert');
-const db = require('../src/database/db');
-const seed = require('../src/database/seed');
+const test = require("node:test");
+const assert = require("node:assert");
+// const db = require("../src/database/db");
+// const seed = require("../src/database/seed");
 const {
   selectWork,
   insertArtworkDetails,
   insertImage,
-} = require('../src/model/images.js');
+} = require("../src/model/images.js");
 
 // function reset() {
 //   db.exec(`PRAGMA foreign_keys = OFF;`);
@@ -57,7 +57,7 @@ const {
 //   db.exec(seed);
 // }
 
-test('Can get all the artworks from the db', () => {
+test("Can get all the artworks from the db", () => {
   //   reset();
   const artworks = selectWork();
   console.log(artworks);
@@ -65,32 +65,32 @@ test('Can get all the artworks from the db', () => {
   assert.equal(artworks[0].id, 1);
   assert.equal(
     artworks[1].description,
-    'Gweneth Paltro at night being spooky in the road'
+    "Gweneth Paltro at night being spooky in the road",
   );
-  assert.equal(artworks[1].uploaded_by, 'GwenXXX');
+  assert.equal(artworks[1].uploaded_by, "GwenXXX");
 });
 
-test('Can add a new artwork to the db', () => {
+test("Can add a new artwork to the db", () => {
   //   reset();
 
-  const imageId = insertImage('fake_image_path').id;
+  const imageId = insertImage("fake_image_path").id;
 
   const testArtwork = {
-    description: 'Lovely happy ponies bathing in meadow sunlight',
+    description: "Lovely happy ponies bathing in meadow sunlight",
     image_id: imageId,
-    uploaded_by: 'MyLittlePony',
+    uploaded_by: "MyLittlePony",
   };
   console.log(testArtwork.description);
   insertArtworkDetails(
     testArtwork.description,
     testArtwork.image_id,
-    testArtwork.uploaded_by
+    testArtwork.uploaded_by,
   );
   const artworks = selectWork();
   const newArtwork = artworks.pop();
   assert.equal(
     newArtwork.description,
-    'Lovely happy ponies bathing in meadow sunlight'
+    "Lovely happy ponies bathing in meadow sunlight",
   );
-  assert.equal(newArtwork.uploaded_by, 'MyLittlePony');
+  assert.equal(newArtwork.uploaded_by, "MyLittlePony");
 });

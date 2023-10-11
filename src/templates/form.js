@@ -1,5 +1,5 @@
 const form = () => {
-  return /*html*/ `
+  return /* html */ `
   <!doctype html>
     <html lang="en">
       <head>

@@ -1,5 +1,5 @@
 const layout = (artworkDetails) => {
-  return /*html*/ `
+  return /* html */ `
   <!doctype html>
   <html lang="en">
     <head>
@@ -34,11 +34,6 @@ const layout = (artworkDetails) => {
         <div class="gallery-container">
         ${artworkDetails
           .reduce((acc, image, index) => {
-            // if (index % 2 === 0) {
-            //   // Start a new row
-            //   acc.push(`<div class="main__row">`);
-            // }
-
             acc.push(`
             <div class="gallery-child" hidden=false>
 
@@ -51,7 +46,6 @@ const layout = (artworkDetails) => {
               </div>
             </div>
           `);
-
             return acc;
           }, [])
           .join('')}

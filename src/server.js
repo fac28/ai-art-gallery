@@ -30,7 +30,6 @@ server.use(Sentry.Handlers.requestHandler());
 // TracingHandler creates a trace for every incoming request
 server.use(Sentry.Handlers.tracingHandler());
 
-
 const staticHandler = express.static("public");
 
 const galleryRoute = require("./routes/gallery");
@@ -42,13 +41,12 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(staticHandler);
 server.use("/", galleryRoute);
 server.use("/submit", formRoute);
-server.use('/uploads', express.static('uploads'));
-
+server.use("/uploads", express.static("uploads"));
 
 // Testing will remove it in a bit
-server.get("/debug-sentry", function mainHandler(req, res) {
-    throw new Error("My first Sentry error!");
-  });
+server.get("/debug-sentry", function mainHandler (req, res) {
+  throw new Error("My first Sentry error!");
+});
 
 // No more routes after this line please!
 
@@ -56,7 +54,8 @@ server.get("/debug-sentry", function mainHandler(req, res) {
 server.use(Sentry.Handlers.errorHandler());
 
 // Optional fallthrough error handler
-server.use(function onError(err, req, res, next) {
+// eslint-disable-next-line n/handle-callback-err
+server.use(function onError (err, req, res, next) {
   // The error id is attached to `res.sentry` to be returned
   // and optionally displayed to the user for support.
   res.statusCode = 500;

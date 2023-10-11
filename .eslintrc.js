@@ -23,6 +23,6 @@ module.exports = {
   rules: {
     quotes: ["error", "double"],
     "comma-dangle": ["error", "always-multiline"],
-    "semi-style": ["error", "never"],
+    semi: 0,
   },
 }
