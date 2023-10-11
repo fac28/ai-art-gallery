@@ -7,6 +7,7 @@ const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 
 router.get("/", (req, res) => {
+  // console.log(res.send(form()));
   return res.send(form());
 });
 
@@ -16,15 +17,16 @@ router.post("/", upload.single("avatar"), (req, res) => {
 
   // req.body will hold the text fields, if there were any
   const { name, description } = req.body;
-  let tags = req.body.action
+  let tags = req.body.action;
 
   if (!tags) {
-    tags = []
+    tags = [];
   }
 
-  const tagsString = tags.join(", ")
-  const imageId = insertImage(fileImg.path).id
-  insertArtworkDetails(description, imageId, name, tagsString)
+  const tagsString = tags.join(", ");
+  console.log(tagsString);
+  const image_id = insertImage(fileImg.path).id;
+  insertArtworkDetails(description, image_id, name, tagsString);
 
   res.redirect("/");
 });
