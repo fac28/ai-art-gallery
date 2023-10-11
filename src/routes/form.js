@@ -7,7 +7,6 @@ const multer = require("multer");
 const upload = multer({ storage: multer.memoryStorage() });
 
 router.get("/", (req, res) => {
-  // console.log(res.send(form()));
   return res.send(form());
 });
 
@@ -26,7 +25,6 @@ router.post("/", upload.single("avatar"), (req, res) => {
   const tagsString = tags.join(", ");
 
   const imageBuffer = fileImg.buffer.toString("base64");
-
   const imageId = insertImage(imageBuffer).id;
   insertArtworkDetails(description, imageId, name, tagsString);
 

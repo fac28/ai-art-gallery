@@ -20,7 +20,6 @@ function assertAttr(body, name, expected, msg) {
   const getAttr = new RegExp(`${name}="([^"]*)"`, "i");
   const match = body.match(getAttr);
   if (!match && !expected.includes("")) {
-    console.log({ name, expected, match });
     throw new Error(msg);
   }
   if (match) {
