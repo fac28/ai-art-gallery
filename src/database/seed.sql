@@ -16,12 +16,12 @@ INSERT INTO images VALUES
 
 ON CONFLICT DO NOTHING;
 
-INSERT INTO image_details (id, description, created_at, image_id, uploaded_by) VALUES
-  (1, 'A beautiful picture of a sunset with lots of smiles and happinenss', '2023-01-01 12:00:00', 1, 'Susie Woosie'),
-  (2, 'Gweneth Paltro at night being spooky in the road', '2023-01-01 12:00:00', 2, 'GwenXXX'),
-  (3, 'Barack Obama dancing', '2023-01-01 12:00:00', 3, 'POTUS_Hehe'),
-  (4, 'Four otters crossed with a giraffe', '2023-01-01 12:00:00', 4, 'AnimalCrosser'),
-  (5, 'Dream city where roads are rivers and rivers are seas', '2023-01-01 12:00:00', 5, 'NatureGal')
+INSERT INTO image_details (id, description, created_at, image_id, uploaded_by, tags) VALUES
+  (1, 'A beautiful picture of a sunset with lots of smiles and happinenss', '2023-01-01 12:00:00', 1, 'Susie Woosie', ''),
+  (2, 'Gweneth Paltro at night being spooky in the road', '2023-01-01 12:00:00', 2, 'GwenXXX','travel'),
+  (3, 'Barack Obama dancing', '2023-01-01 12:00:00', 3, 'POTUS_Hehe','travel, fantasy'),
+  (4, 'Four otters crossed with a giraffe', '2023-01-01 12:00:00', 4, 'AnimalCrosser', 'fantasy'),
+  (5, 'Dream city where roads are rivers and rivers are seas', '2023-01-01 12:00:00', 5, 'NatureGal', 'travel, fantasy')
 ON CONFLICT DO NOTHING;
 
 COMMIT;
