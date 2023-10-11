@@ -15,23 +15,38 @@ const layout = (artworkDetails) => {
       <header class="header">
         <a href="/submit" class="header__link">Submit</a>
       </header>
+      <h1 class="header__title">Welcome to the gallery</h1>
       <main class="main">
-        <h1 class="header__title">Welcome to the gallery</h1>
-        <div class="main__row">
-          ${artworkDetails.map(image => `
+        ${artworkDetails
+          .reduce((acc, image, index) => {
+            if (index % 2 === 0) {
+              // Start a new row
+              acc.push(`<div class="main__row">`);
+            }
+
+            acc.push(`
             <div class="main__image-container">
               <img class="main__image" src="${image.image_file}">
               <div class="main__image-description">
-                <p class="main__username">${image.uploaded_by}</p>
+                <p class="main__username"><strong>${image.uploaded_by}</strong></p>
                 <p class="main__description">${image.description}</p>
+                <span>${image.created_at}</span>
               </div>
             </div>
-          `).join('')}
-        </div>
+          `);
+
+            if (index % 2 !== 0 || index === artworkDetails.length - 1) {
+              // Close the row when we have two images or it's the last image
+              acc.push(`</div>`);
+            }
+
+            return acc;
+          }, [])
+          .join("")}
       </main>
     </body>
   </html>
   `;
-}
+};
 
 module.exports = layout;
