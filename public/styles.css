@@ -70,6 +70,13 @@ p {
   /* margin: 0 auto; */
   padding: 4rem 2rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.main-form {
+  flex-direction: column;
+  align-items: center;
 }
 
 /*------------------------------------*\
@@ -84,14 +91,33 @@ Components
   justify-content: center;
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+select {
+  border: 1px solid var(--another-light);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
 .header__link {
-  background-color: var(--secondary-light);
+  /* background-color: var(--secondary-light); */
+  background-color: white;
   color: black;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
-  border: 1px solid white;
+  padding: 1rem 2rem;
+  border: 1px solid var(--another-light);
   border-radius: 5px;
+}
+
+.header__link:hover,
+.form_btn:hover {
+  opacity: 70%;
 }
 
 /* can be deleted once ensured this works - same in js */
@@ -114,20 +140,21 @@ Components
   max-width: 280px;
   min-height: 25rem;
   border-radius: 20px;
-  border: 1px solid red;
+  border: 1px solid var(--another-light);
   overflow: hidden;
   box-sizing: border-box;
   /* margin: 1rem; */
   /* margin: 1rem auto; */
-  /* overflow: hidden;
-  padding: 0; */
-  background-color: var(--primary-dark);
+  /* overflow: hidden; */
+  /* background-color: var(--primary-dark); */
+  background-color: white;
 }
 
 .main__image {
   width: 100%;
   height: 50%;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .main__username {
@@ -140,14 +167,14 @@ Components
 .main__description {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0;
+  /* margin: 0; */
 }
 
 .main__image-description {
   font-size: 1.2rem;
   font-weight: 400;
-  background-color: var(--primary-dark);
-  padding: 1rem;
+  /* background-color: var(--primary-dark); */
+  padding: 0 1rem;
   box-sizing: border-box;
   /* height: 30%; */
 }
@@ -159,7 +186,7 @@ Components
 }
 
 .header__title {
-  color: #fa5b52;
+  color: #1a1a1a;
   padding: 2rem;
 }
 
@@ -177,6 +204,11 @@ form {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--another-light);
+  background-color: white;
+  border-radius: 15px;
+  width: 80%;
+  padding: 3rem;
   align-items: center;
 }
 
@@ -189,12 +221,19 @@ textarea {
   margin: 1rem 0;
   padding: 0.5rem;
   border-radius: 5px;
-  background-color: var(--another-light);
+  background-color: var(--primary-dark);
   margin: 1rem auto;
+}
+
+input,
+form label,
+textarea,
+fieldset {
+  width: 70%;
 }
 .bottom_border {
   border: none;
-  border-bottom: 2px solid var(--secondary-dark);
+  border-bottom: 2px solid var(--another-light);
 }
 
 .file_input {
@@ -203,14 +242,31 @@ textarea {
 
 .form_btn {
   font-size: 1rem;
+  margin-top: 1em;
+  padding: 10px 15px;
   color: white;
+  background-color: var(--another-light);
   border: none;
   border-radius: 3px;
 }
 
+button:hover {
+  opacity: 70%;
+}
+
 .file_input_label {
   padding: 10px 15px;
-  background-color: var(--secondary-dark);
+  background-color: var(--another-light);
+}
+
+fieldset {
+  /* width: 100%; */
+  /* padding: 0 auto; */
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-top: 2rem;
+  border: 1px solid var(--another-light);
 }
 
 .submit_btn {
@@ -229,12 +285,12 @@ textarea {
   content: '⚠️ ';
 }
 
-[hidden="true"]{
+[hidden='true'] {
   display: none;
 }
 
-[hidden="false"]{
-  display: block; 
+[hidden='false'] {
+  display: block;
 }
 
 /*------------------------------------*\
