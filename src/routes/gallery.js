@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
         image_file: imageDetails.image_file };
     }));
 
-    console.log(artworkWithImages);
+    // console.log(artworkWithImages);
     return res.send(layout(artworkWithImages));
   } catch (error) {
     console.error("Error fetching data:", error);
