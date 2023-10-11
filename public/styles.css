@@ -115,7 +115,8 @@ select {
   border-radius: 5px;
 }
 
-.header__link:hover {
+.header__link:hover,
+.form_btn:hover {
   opacity: 70%;
 }
 
