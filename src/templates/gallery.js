@@ -15,6 +15,7 @@ const layout = (artworkDetails) => {
       <header class="header">
         <a href="/submit" class="header__link">Submit</a>
       </header>
+      <h1 class="header__title">Welcome to the gallery</h1>
       <main class="main">
         ${artworkDetails.reduce((acc, image, index) => {
           if (index % 2 === 0) {
