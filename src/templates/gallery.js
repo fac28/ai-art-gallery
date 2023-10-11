@@ -33,11 +33,11 @@ const layout = (artworkDetails) => {
       <main class="main">
         <div class="gallery-container">
         ${artworkDetails
-          .reduce((acc, image, index) => {
+          .reduce((acc, image) => {
             acc.push(`
             <div class="gallery-child" hidden=false>
 
-              <img class="main__image" src="${image.image_file}">
+              <img class="main__image" src="${"data:image/png;base64," + image.image_file}">
               <div class="main__image-description">
                 <p class="main__username"><strong>${image.uploaded_by}</strong></p>
                 <p class="main__tags">${image.tags}</p>
