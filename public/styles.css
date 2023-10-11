@@ -245,6 +245,10 @@ fieldset {
   border-radius: 3px;
 }
 
+button:hover {
+  opacity: 70%;
+}
+
 .file_input_label {
   padding: 10px 15px;
   background-color: var(--another-light);
