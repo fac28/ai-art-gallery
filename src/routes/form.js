@@ -4,7 +4,7 @@ const form = require("../templates/form");
 const { insertImage, insertArtworkDetails } = require("../model/images");
 
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ storage: multer.memoryStorage() });
 
 router.get("/", (req, res) => {
   // console.log(res.send(form()));
@@ -24,9 +24,11 @@ router.post("/", upload.single("avatar"), (req, res) => {
   }
 
   const tagsString = tags.join(", ");
-  console.log(tagsString);
-  const image_id = insertImage(fileImg.path).id;
-  insertArtworkDetails(description, image_id, name, tagsString);
+
+  const imageBuffer = fileImg.buffer.toString("base64");
+
+  const imageId = insertImage(imageBuffer).id;
+  insertArtworkDetails(description, imageId, name, tagsString);
 
   res.redirect("/");
 });
