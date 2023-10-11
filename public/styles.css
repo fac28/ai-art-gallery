@@ -255,6 +255,8 @@ fieldset {
   /* padding: 0 auto; */
   display: flex;
   align-items: center;
+  padding: 0 0.5rem;
+  margin-top: 2rem;
   border: 1px solid var(--another-light);
 }
 

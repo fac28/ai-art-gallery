@@ -14,7 +14,7 @@ const form = () => {
       </head>
       <body>
         <header class="header">
-          <a href="/" class="header__link">home</a>
+          <a href="/" class="header__link">Home</a>
         </header>
         <main class="main main-form">
           <h1 class="form__title">Upload your image</h1>
