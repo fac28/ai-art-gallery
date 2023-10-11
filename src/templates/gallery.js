@@ -48,7 +48,7 @@ const layout = (artworkDetails) => {
           `);
             return acc;
           }, [])
-          .join('')}
+          .join("")}
           </div>
       </main>
     </body>
