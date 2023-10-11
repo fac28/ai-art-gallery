@@ -27,10 +27,10 @@
 \*------------------------------------*/
 
 :root {
-  --primary-light: #f7ede2;
+  --primary-light: #f1f7fd;
   --secondary-light: #f5cac3;
-  --another-light: #fcf8f5;
-  --primary-dark: #f28482;
+  --another-light: #1c73e8;
+  --primary-dark: #deebff;
   --secondary-dark: #84a59d;
   --header-font: 'PT Serif', serif;
   --paragraph-font: 'Playfair Display', serif;
@@ -47,7 +47,7 @@ body {
 
 h1 {
   text-align: center;
-  font-family: var(--header-font);
+  font-family: var(--paragraph-font);
   font-size: 3rem;
 }
 
@@ -67,8 +67,8 @@ p {
 
 .main {
   /* max-width: 80%; */
-  margin: 0 auto;
-  padding: 0 1rem;
+  /* margin: 0 auto; */
+  padding: 4rem 2rem;
   box-sizing: border-box;
 }
 
@@ -78,11 +78,10 @@ Components
 
 .header {
   background-color: var(--primary-dark);
-  height: 3rem;
   display: flex;
   align-items: center;
-  padding-left: 3rem;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  justify-content: center;
 }
 
 .header__link {
@@ -95,18 +94,30 @@ Components
   border-radius: 5px;
 }
 
-.main__row {
+/* can be deleted once ensured this works - same in js */
+/* .main__row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+} */
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 80%;
 }
 
-.main__image-container {
+.gallery-child {
   color: var(--another-light);
-  max-width: 300px;
+  max-width: 280px;
   min-height: 25rem;
+  border-radius: 20px;
+  border: 1px solid red;
+  overflow: hidden;
   box-sizing: border-box;
-  margin: 1rem;
+  /* margin: 1rem; */
   /* margin: 1rem auto; */
   /* overflow: hidden;
   padding: 0; */
@@ -115,7 +126,7 @@ Components
 
 .main__image {
   width: 100%;
-  height: 70%;
+  height: 50%;
   object-fit: cover;
 }
 
