@@ -1,5 +1,5 @@
 const layout = (artworkDetails) => {
-  return /*html*/ `
+  return /* html */ `
   <!doctype html>
   <html lang="en">
     <head>
@@ -35,7 +35,7 @@ const layout = (artworkDetails) => {
           .reduce((acc, image, index) => {
             if (index % 2 === 0) {
               // Start a new row
-              acc.push(`<div class="main__row">`);
+              acc.push("<div class=\"main__row\">");
             }
 
             acc.push(`
@@ -52,7 +52,7 @@ const layout = (artworkDetails) => {
 
             if (index % 2 !== 0 || index === artworkDetails.length - 1) {
               // Close the row when we have two images or it's the last image
-              acc.push(`</div>`);
+              acc.push("</div>");
             }
 
             return acc;

@@ -1,15 +1,15 @@
-function isTagged(tags, userFilter) {
+const imageContainers = document.querySelectorAll(".main__image-container");
+
+function isTagged (tags, userFilter) {
   return tags.split(", ").some(function (tag) {
     return tag === userFilter;
   });
 }
 
-const imageContainers = document.querySelectorAll(".main__image-container");
-
-function hideImage(userFilter){
+function hideImage (userFilter) {
   let allHidden = true;
 
-  if(userFilter === "all"){
+  if (userFilter === "all") {
     imageContainers.forEach(function (imageContainer) {
       imageContainer.setAttribute("hidden", false);
     });
@@ -27,12 +27,10 @@ function hideImage(userFilter){
     }
   });
 
-  if(allHidden){
-    // add a p element message
+  if (allHidden) {
     const p = document.createElement("p");
     p.className = "main__no-images";
     p.innerText = "No images found";
-    // add the p element to the main element
     const main = document.querySelector("main");
     main.appendChild(p);
   }
@@ -44,10 +42,9 @@ selectElement.addEventListener("change", function (event) {
   const userFilter = event.target.value;
   const main = document.querySelector("main");
   const p = main.querySelector(".main__no-images");
-  if(p){
+  if (p) {
     main.removeChild(p);
   }
 
   hideImage(userFilter);
 });
-
