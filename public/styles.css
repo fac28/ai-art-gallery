@@ -221,7 +221,7 @@ textarea {
 }
 
 input,
-label,
+form label,
 textarea,
 fieldset {
   width: 70%;
