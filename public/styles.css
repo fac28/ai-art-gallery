@@ -32,8 +32,8 @@
   --another-light: #fcf8f5;
   --primary-dark: #f28482;
   --secondary-dark: #84a59d;
-  --header-font: "PT Serif", serif;
-  --paragraph-font: "Playfair Display", serif;
+  --header-font: 'PT Serif', serif;
+  --paragraph-font: 'Playfair Display', serif;
 }
 
 /*------------------------------------*\
@@ -66,7 +66,7 @@ p {
 }
 
 .main {
-  max-width: 80%;
+  /* max-width: 80%; */
   margin: 0 auto;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -97,17 +97,19 @@ Components
 
 .main__row {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .main__image-container {
   color: var(--another-light);
-  width: 45%;
-  height: 25rem;
+  max-width: 300px;
+  min-height: 25rem;
   box-sizing: border-box;
-  margin: 1rem auto;
-  overflow: hidden;
-  padding: 0;
+  margin: 1rem;
+  /* margin: 1rem auto; */
+  /* overflow: hidden;
+  padding: 0; */
   background-color: var(--primary-dark);
 }
 
@@ -136,7 +138,7 @@ Components
   background-color: var(--primary-dark);
   padding: 1rem;
   box-sizing: border-box;
-  height: 30%;
+  /* height: 30%; */
 }
 
 .main__description-container {
@@ -206,14 +208,14 @@ textarea {
   background-color: var(--primary-dark);
 }
 
-[aria-invalid="true"] {
+[aria-invalid='true'] {
   border-color: red;
 }
-[aria-invalid="true"] + * {
+[aria-invalid='true'] + * {
   color: red;
 }
-[aria-invalid="true"] + *::before {
-  content: "⚠️ ";
+[aria-invalid='true'] + *::before {
+  content: '⚠️ ';
 }
 
 /*------------------------------------*\
