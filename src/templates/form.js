@@ -44,7 +44,7 @@ const form = () => {
             <button class="submit_btn form_btn">Submit</button>
           </form>
         </main>
-        
+
       <body>
   `;
 };

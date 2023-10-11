@@ -12,13 +12,14 @@ router.get('/', (req, res) => {
 
 router.post('/', upload.single('avatar'), (req, res) => {
   // req.file is the `avatar` file
-  console.log(req)
   const fileImg = req.file;
+  console.log(fileImg);
   // req.body will hold the text fields, if there were any
   const { name, description } = req.body;
-  console.log(fileImg);
-  console.log(name, description);
-  // res.redirect('/gallery');
+  const image_id = insertImage(fileImg.path).id
+  insertArtworkDetails(description, image_id, name)
+  console.log('Image uploaded')
+  res.redirect('/');
 });
 
 module.exports = router;

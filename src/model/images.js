@@ -2,8 +2,8 @@ const db = require('../database/db.js');
 
 module.exports = {
   // submitWork,
-  // selectWork,
-  // displayWorks,
+  selectWork,
+  displayWorks,
   insertImage,
   insertArtworkDetails,
 };
@@ -14,8 +14,8 @@ const insert_image = db.prepare(/*sql*/ `
   RETURNING id
 `);
 
-function insertImage() {
-  return insert_image.get();
+function insertImage(image_file) {
+  return insert_image.get({"image_file": image_file});
 }
 
 const insert_artwork_details = db.prepare(/*sql*/ `
@@ -23,19 +23,25 @@ const insert_artwork_details = db.prepare(/*sql*/ `
   VALUES ($description, $image_id, $uploaded_by)
 `);
 
-function insertArtworkDetails(image_id) {
-  return insert_artwork_details.run(image_id);
+function insertArtworkDetails(description, image_id, uploaded_by) {
+  return insert_artwork_details.run({description, image_id, uploaded_by});
+}
+
+const select_artwork_details = db.prepare(/*sql*/ `
+    SELECT id, description, uploaded_by
+    FROM image_details
+`);
+
+function selectWork() {
+  return select_artwork_details.all();
 }
 
 const select_artwork = db.prepare(/*sql*/ `
-    SELECT id, description, uploaded_by FROM image_details
+    SELECT image_file
+    FROM images
+    WHERE id = $id
 `);
 
-// function selectWork() {
-//   return select_artwork.all();
-//   console.log('Artwork selected');
-// }
-
-// function displayWorks() {
-//   console.log('Beautiful!');
-// }
+function displayWorks(id) {
+  return select_artwork.get({id});
+}

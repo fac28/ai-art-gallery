@@ -1,4 +1,4 @@
-const layout = (images) => {
+const layout = (artworkDetails) => {
   return /*html*/ `
   <!doctype html>
   <html lang="en">
@@ -18,11 +18,11 @@ const layout = (images) => {
       <main class="main">
         <h1 class="header__title">Welcome to the gallery</h1>
         <div class="main__row">
-          ${images.map(image => `
+          ${artworkDetails.map(image => `
             <div class="main__image-container">
-              <img class="main__image" src="${image.url}" alt="${image.alt}">
+              <img class="main__image" src="${image.image_file}">
               <div class="main__image-description">
-                <p class="main__username">${image.username}</p>
+                <p class="main__username">${image.uploaded_by}</p>
                 <p class="main__description">${image.description}</p>
               </div>
             </div>

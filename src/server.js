@@ -42,6 +42,8 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(staticHandler);
 server.use("/", galleryRoute);
 server.use("/submit", formRoute);
+server.use('/uploads', express.static('uploads'));
+
 
 // Testing will remove it in a bit
 server.get("/debug-sentry", function mainHandler(req, res) {
