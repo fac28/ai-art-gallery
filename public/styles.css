@@ -115,6 +115,10 @@ select {
   border-radius: 5px;
 }
 
+.header__link:hover {
+  opacity: 70%;
+}
+
 /* can be deleted once ensured this works - same in js */
 /* .main__row {
   display: flex;
