@@ -30,6 +30,7 @@ function reset() {
       created_at TIMESTAMP,
       image_id INTEGER,
       uploaded_by VARCHAR(255),
+      tags VARCHAR(255), 
       FOREIGN KEY (image_id) REFERENCES images (id)
     );
   `);
@@ -79,12 +80,14 @@ test("Can add a new artwork to the db", () => {
     description: "Lovely happy ponies bathing in meadow sunlight",
     image_id: imageId,
     uploaded_by: "MyLittlePony",
+    tags: "NatureGal, travel, fantasy",
   };
   console.log(testArtwork.description);
   insertArtworkDetails(
     testArtwork.description,
     testArtwork.image_id,
-    testArtwork.uploaded_by
+    testArtwork.uploaded_by,
+    testArtwork.tags
   );
   const artworks = selectWork();
   const newArtwork = artworks.pop();
@@ -93,4 +96,5 @@ test("Can add a new artwork to the db", () => {
     "Lovely happy ponies bathing in meadow sunlight"
   );
   assert.equal(newArtwork.uploaded_by, "MyLittlePony");
+  assert.equal(newArtwork.tags, "NatureGal, travel, fantasy");
 });
