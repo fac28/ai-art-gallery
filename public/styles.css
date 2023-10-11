@@ -101,6 +101,7 @@ Components
 }
 
 .main__image-container {
+  color: var(--another-light);
   width: 45%;
   height: 25rem;
   box-sizing: border-box;
@@ -119,7 +120,6 @@ Components
 .main__username {
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--another-light);
   margin-bottom: 1rem;
   font-style: italic;
 }
@@ -127,7 +127,6 @@ Components
 .main__description {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-light);
   margin: 0;
 }
 
