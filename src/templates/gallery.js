@@ -31,15 +31,12 @@ const layout = (artworkDetails) => {
         </select>
       </div>
       <main class="main">
+        <div class="gallery-container">
         ${artworkDetails
           .reduce((acc, image, index) => {
-            if (index % 2 === 0) {
-              // Start a new row
-              acc.push("<div class=\"main__row\">");
-            }
-
             acc.push(`
-            <div class="main__image-container" hidden=false>
+            <div class="gallery-child" hidden=false>
+
               <img class="main__image" src="${image.image_file}">
               <div class="main__image-description">
                 <p class="main__username"><strong>${image.uploaded_by}</strong></p>
@@ -49,15 +46,10 @@ const layout = (artworkDetails) => {
               </div>
             </div>
           `);
-
-            if (index % 2 !== 0 || index === artworkDetails.length - 1) {
-              // Close the row when we have two images or it's the last image
-              acc.push("</div>");
-            }
-
             return acc;
           }, [])
-          .join("")}
+          .join('')}
+          </div>
       </main>
     </body>
   </html>
