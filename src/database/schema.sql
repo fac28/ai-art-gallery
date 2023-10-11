@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS image_details (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   image_id INTEGER,
   uploaded_by VARCHAR(255),
+  tags VARCHAR(255),
   FOREIGN KEY (image_id) REFERENCES images (id)
 );
 

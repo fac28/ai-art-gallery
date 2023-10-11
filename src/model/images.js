@@ -19,21 +19,26 @@ function insertImage(image_file) {
 }
 
 const insert_artwork_details = db.prepare(/*sql*/ `
-  INSERT INTO image_details (description, image_id, uploaded_by, created_at)
-  VALUES ($description, $image_id, $uploaded_by, strftime('%Y-%m-%d %H:%M', 'now'))
+  INSERT INTO image_details (description, image_id, uploaded_by, created_at, tags)
+  VALUES (
+    $description, 
+    $image_id, 
+    $uploaded_by, 
+    strftime('%Y-%m-%d %H:%M', 'now'),
+    $tags)
 `);
 
-function insertArtworkDetails(description, image_id, uploaded_by, created_at) {
+function insertArtworkDetails(description, image_id, uploaded_by, tags) {
   return insert_artwork_details.run({
     description,
     image_id,
     uploaded_by,
-    created_at,
+    tags
   });
 }
 
 const select_artwork_details = db.prepare(/*sql*/ `
-    SELECT id, description, uploaded_by, created_at
+    SELECT id, description, uploaded_by, created_at, tags
     FROM image_details
 `);
 

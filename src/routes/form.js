@@ -17,10 +17,16 @@ router.post('/', upload.single('avatar'), (req, res) => {
   
   // req.body will hold the text fields, if there were any
   const { name, description } = req.body;
-  const tags = req.body.action
-  console.log(tags)
+  let tags = req.body.action
+
+  if(!tags){
+    tags = []
+  }
+  
+  const tagsString = tags.join(', ')
+  console.log(tagsString)
   const image_id = insertImage(fileImg.path).id
-  insertArtworkDetails(description, image_id, name)
+  insertArtworkDetails(description, image_id, name, tagsString)
 
   res.redirect('/');
 });
