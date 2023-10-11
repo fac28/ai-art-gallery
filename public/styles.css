@@ -229,6 +229,14 @@ textarea {
   content: '⚠️ ';
 }
 
+[hidden="true"]{
+  display: none;
+}
+
+[hidden="false"]{
+  display: block; 
+}
+
 /*------------------------------------*\
  Media queries
 \*------------------------------------*/
