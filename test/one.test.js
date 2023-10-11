@@ -8,12 +8,12 @@ const {
   insertImage,
 } = require("../src/model/images.js");
 
-function reset() {
-  db.exec(`PRAGMA foreign_keys = OFF;`);
+function reset () {
+  db.exec("PRAGMA foreign_keys = OFF;");
 
   // Drop and recreate tables
-  db.exec(`DROP TABLE IF EXISTS images;`);
-  db.exec(`DROP TABLE IF EXISTS image_details;`);
+  db.exec("DROP TABLE IF EXISTS images;");
+  db.exec("DROP TABLE IF EXISTS image_details;");
 
   // Create tables with the desired schema
   db.exec(`
@@ -35,7 +35,7 @@ function reset() {
     );
   `);
 
-  db.exec(`PRAGMA foreign_keys = ON;`);
+  db.exec("PRAGMA foreign_keys = ON;");
 
   // Re-seed the database if needed
   db.exec(seed);
@@ -49,7 +49,7 @@ test("Can get all the artworks from the db", () => {
   assert.equal(artworks[0].id, 1);
   assert.equal(
     artworks[1].description,
-    "Gweneth Paltro at night being spooky in the road"
+    "Gweneth Paltro at night being spooky in the road",
   );
   assert.equal(artworks[1].uploaded_by, "GwenXXX");
 });
@@ -70,13 +70,13 @@ test("Can add a new artwork to the db", () => {
     testArtwork.description,
     testArtwork.image_id,
     testArtwork.uploaded_by,
-    testArtwork.tags
+    testArtwork.tags,
   );
   const artworks = selectWork();
   const newArtwork = artworks.pop();
   assert.equal(
     newArtwork.description,
-    "Lovely happy ponies bathing in meadow sunlight"
+    "Lovely happy ponies bathing in meadow sunlight",
   );
   assert.equal(newArtwork.uploaded_by, "MyLittlePony");
   assert.equal(newArtwork.tags, "NatureGal, travel, fantasy");
