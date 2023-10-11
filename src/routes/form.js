@@ -7,6 +7,7 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 router.get('/', (req, res) => {
+  // console.log(res.send(form()));
   return res.send(form());
 });
 
@@ -18,10 +19,9 @@ router.post('/', upload.single('avatar'), (req, res) => {
   const { name, description } = req.body;
   const tags = req.body.action
   console.log(tags)
-  // console.log(req.body)
   const image_id = insertImage(fileImg.path).id
   insertArtworkDetails(description, image_id, name)
-  // console.log('Image uploaded')
+
   res.redirect('/');
 });
 
