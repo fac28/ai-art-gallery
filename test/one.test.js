@@ -8,37 +8,37 @@ const {
   insertImage,
 } = require('../src/model/images.js');
 
-function reset() {
-  db.exec(`PRAGMA foreign_keys = OFF;`);
+// function reset() {
+//   db.exec(`PRAGMA foreign_keys = OFF;`);
 
-  // Drop and recreate tables
-  db.exec(`DROP TABLE IF EXISTS images;`);
-  db.exec(`DROP TABLE IF EXISTS image_details;`);
+//   // Drop and recreate tables
+//   db.exec(`DROP TABLE IF EXISTS images;`);
+//   db.exec(`DROP TABLE IF EXISTS image_details;`);
 
-  // Create tables with the desired schema
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS images (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      image_file BLOB NOT NULL
-    );
-  `);
+//   // Create tables with the desired schema
+//   db.exec(`
+//     CREATE TABLE IF NOT EXISTS images (
+//       id INTEGER PRIMARY KEY AUTOINCREMENT,
+//       image_file BLOB NOT NULL
+//     );
+//   `);
 
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS image_details (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      description VARCHAR(255),
-      created_at TIMESTAMP,
-      image_id INTEGER,
-      uploaded_by VARCHAR(255),
-      FOREIGN KEY (image_id) REFERENCES images (id)
-    );
-  `);
+//   db.exec(`
+//     CREATE TABLE IF NOT EXISTS image_details (
+//       id INTEGER PRIMARY KEY AUTOINCREMENT,
+//       description VARCHAR(255),
+//       created_at TIMESTAMP,
+//       image_id INTEGER,
+//       uploaded_by VARCHAR(255),
+//       FOREIGN KEY (image_id) REFERENCES images (id)
+//     );
+//   `);
 
-  db.exec(`PRAGMA foreign_keys = ON;`);
+//   db.exec(`PRAGMA foreign_keys = ON;`);
 
-  // Re-seed the database if needed
-  db.exec(seed);
-}
+//   // Re-seed the database if needed
+//   db.exec(seed);
+// }
 
 // function reset() {
 //   db.exec(`PRAGMA foreign_keys = OFF;`);
@@ -87,14 +87,10 @@ test('Can add a new artwork to the db', () => {
     testArtwork.uploaded_by
   );
   const artworks = selectWork();
-  console.log(artworks);
-  //   const newArtwork = artworks.pop();
-  //   console.log(newArtwork);
-
-  //   assert.equal(newArtwork.id, 6);
-  //   assert.equal(
-  //     newArtwork.description,
-  //     'Lovely happy ponies bathing in meadow sunlight'
-  //   );
-  //   assert.equal(newArtwork.uploaded_by, 'MyLittlePony');
+  const newArtwork = artworks.pop();
+  assert.equal(
+    newArtwork.description,
+    'Lovely happy ponies bathing in meadow sunlight'
+  );
+  assert.equal(newArtwork.uploaded_by, 'MyLittlePony');
 });
