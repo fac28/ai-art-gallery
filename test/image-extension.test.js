@@ -1,7 +1,10 @@
 const test = require("node:test");
 const assert = require("node:assert");
+<<<<<<< HEAD
 // const db = require("../src/database/db");
 // const seed = require("../src/database/seed");
+=======
+>>>>>>> 8edd963393d5aa109d386a7693e93eaf016777d0
 const { insertImage } = require("../src/model/images.js");
 
 test("User can only submit images with filenames ending in jpg, jpeg, or png", () => {
@@ -25,7 +28,10 @@ test("User can only submit images with filenames ending in jpg, jpeg, or png", (
   invalidFilenames.forEach((filename) => {
     const isValidExtension = validFileExtension.test(filename);
     if (isValidExtension) {
+<<<<<<< HEAD
       // const work = insertImage(filename);
+=======
+>>>>>>> 8edd963393d5aa109d386a7693e93eaf016777d0
       assert.fail(`${filename} has a valid extension`);
     } else {
       assert.ok(true, `Expected ${filename} to have an invalid extension`);
