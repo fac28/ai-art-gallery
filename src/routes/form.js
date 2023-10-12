@@ -15,14 +15,17 @@ router.get("/", (req, res) => {
 router.post("/", upload.single("avatar"), (req, res) => {
   // req.file is the `avatar` file
   const fileImg = req.file;
-  console.log(fileImg.originalname);
 
   if (!ALLOWED_TYPES.includes(fileImg.mimetype)) {
-    res.status(400).send("<h1>File upload error</h1><p>Please upload an image file</p>");
+    res
+      .status(400)
+      .send("<h1>File upload error</h1><p>Please upload an image file</p>");
   }
 
   if (fileImg.size > MAX_SIZE) {
-    res.status(400).send("<h1>File upload error</h1><p>Profile picture must be < 5MB</p>");
+    res
+      .status(400)
+      .send("<h1>File upload error</h1><p>Profile picture must be < 5MB</p>");
   } else {
     // req.body will hold the text fields, if there were any
     const { name, description } = req.body;
