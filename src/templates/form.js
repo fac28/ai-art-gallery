@@ -1,4 +1,4 @@
-const filterCategories = ["Travel", "Fantasy", "Landscape", "Architecture", "Abstract"]
+const filterCategories = ["travel", "fantasy", "landscape", "architecture", "abstract"]
 
 const form = () => {
   return /* html */ `
@@ -42,7 +42,7 @@ const form = () => {
 
             <label for="avatar" class="file_input_label form_btn">Choose File</label>
             <input type="file" class="file_input" id="avatar" name="avatar" required />
-            <div id="namePlaceholder"></div>    
+            <div id="namePlaceholder"></div>
 
             <fieldset>
               <legend>Please select one or more of the following tags</legend>
@@ -51,7 +51,7 @@ const form = () => {
               <input type="checkbox" name="action[]" id="${filter}" value="${filter}" />
               <label for="${filter}">${filter}</label>
             `).join("")}
-              
+
             </fieldset>
             <button class="form_btn">Submit</button>
           </form>
@@ -61,7 +61,7 @@ const form = () => {
         const fileInput = event.target;
         <!-- fileInput returns a Filelist js object -->
         const fileNamePlaceholder = document.getElementById("namePlaceholder");
-        const imgName = fileInput.files && fileInput.files[0].name;  
+        const imgName = fileInput.files && fileInput.files[0].name;
         if (imgName) {
         fileNamePlaceholder.textContent = "Selected file: " + imgName}
          else {

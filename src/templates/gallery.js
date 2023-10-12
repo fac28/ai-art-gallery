@@ -1,9 +1,9 @@
 const filterCategories = [
-  "Travel",
-  "Fantasy",
-  "Landscape",
-  "Architecture",
-  "Abstract",
+  "travel",
+  "fantasy",
+  "landscape",
+  "architecture",
+  "abstract",
 ];
 
 const layout = (artworkDetails) => {
