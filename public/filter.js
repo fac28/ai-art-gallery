@@ -48,3 +48,19 @@ selectElement.addEventListener("change", function (event) {
 
   hideImage(userFilter);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const deleteButtons = document.querySelectorAll(".main__delete-button");
+
+  deleteButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const deleteUrl = button.getAttribute("data-delete-url");
+
+      console.log(deleteUrl)
+
+      if (deleteUrl) {
+        window.location.href = deleteUrl;
+      }
+    });
+  });
+});

@@ -1,9 +1,9 @@
 const filterCategories = [
-  'Travel',
-  'Fantasy',
-  'Landscape',
-  'Architecture',
-  'Abstract',
+  "Travel",
+  "Fantasy",
+  "Landscape",
+  "Architecture",
+  "Abstract",
 ];
 
 const layout = (artworkDetails) => {
@@ -44,7 +44,7 @@ const layout = (artworkDetails) => {
             <div class="gallery-child" hidden=false>
 
               <img class="main__image" src="${
-                'data:image/png;base64,' + image.image_file
+                "data:image/png;base64," + image.image_file
               }">
               <div class="main__image-description">
                 <p class="main__username"><strong>${
@@ -54,11 +54,14 @@ const layout = (artworkDetails) => {
                 <p class="main__description">${image.description}</p>
                 <span>${image.created_at}</span>
               </div>
+              <button class="main__delete-button" id="${image.id}" data-delete-url=${"/delete/" + image.id}>
+              Delete
+              </button>
             </div>
           `);
             return acc;
           }, [])
-          .join('')}
+          .join("")}
           </div>
       </main>
     </body>
