@@ -27,7 +27,7 @@ const layout = (artworkDetails) => {
             <option value="landscape">Landscape</option>
             <option value="architecture">Architecture</option>
             <option value="abstract">Abstract</option>
-            <option value="all">Show all</option>
+            <option value="all" selected="selected">Show all</option>
         </select>
       </div>
       <main class="main">

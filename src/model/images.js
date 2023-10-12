@@ -7,6 +7,7 @@ module.exports = {
   displayWorks,
   insertImage,
   insertArtworkDetails,
+  deleteWork,
 };
 
 const insert_image = db.prepare(/* sql */ `
@@ -55,4 +56,19 @@ const select_artwork = db.prepare(/* sql */ `
 
 function displayWorks (id) {
   return select_artwork.get({ id });
+}
+
+const delete_artwork_details = db.prepare(/* sql */ `
+    DELETE FROM image_details
+    WHERE image_id = $id
+`);
+
+const delete_artwork = db.prepare(/* sql */ `
+    DELETE FROM images
+    WHERE id = $id
+`);
+
+function deleteWork (id) {
+  delete_artwork_details.run({ id });
+  return delete_artwork.run({ id });
 }
