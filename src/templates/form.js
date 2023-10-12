@@ -43,11 +43,11 @@ const form = () => {
 
             <fieldset>
               <legend>Please select one or more of the following tags</legend>
-              <input type="checkbox" name="action[]" id="travel" value="travel" /><label for="travel">Travel</label><br />
-              <input type="checkbox" name="action[]" id="fantasy" value="fantasy" /><label for="fantasy">Fantasy</label><br />
-              <input type="checkbox" name="action[]" id="landscape" value="landscape" /><label for="landscape">Landscape</label><br />
-              <input type="checkbox" name="action[]" id="architecture" value="architecture" /><label for="architecture">Architecture</label><br />
-              <input type="checkbox" name="action[]" id="abstract" value="abstract" /><label for="abstract">Abstract</label><br />
+              <input type="checkbox" name="action[]" id="travel" value="travel" /><label for="travel">Travel</label>
+              <input type="checkbox" name="action[]" id="fantasy" value="fantasy" /><label for="fantasy">Fantasy</label>
+              <input type="checkbox" name="action[]" id="landscape" value="landscape" /><label for="landscape">Landscape</label>
+              <input type="checkbox" name="action[]" id="architecture" value="architecture" /><label for="architecture">Architecture</label>
+              <input type="checkbox" name="action[]" id="abstract" value="abstract" /><label for="abstract">Abstract</label>
             </fieldset>
             <button class="form_btn">Submit</button>
           </form>
