@@ -1,4 +1,4 @@
-const filterCategories = ['Travel', 'Fantasy', 'Landscape', 'Architecture', 'Abstract']
+const filterCategories = ["Travel", "Fantasy", "Landscape", "Architecture", "Abstract"]
 
 const form = () => {
   return /* html */ `

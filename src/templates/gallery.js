@@ -1,3 +1,11 @@
+const filterCategories = [
+  'Travel',
+  'Fantasy',
+  'Landscape',
+  'Architecture',
+  'Abstract',
+];
+
 const layout = (artworkDetails) => {
   return /* html */ `
   <!doctype html>
@@ -22,11 +30,9 @@ const layout = (artworkDetails) => {
         Filter by tag:
         </label>
         <select id="multiple-select">
-            <option value="travel">Travel</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="landscape">Landscape</option>
-            <option value="architecture">Architecture</option>
-            <option value="abstract">Abstract</option>
+        ${filterCategories
+          .map((filter) => `<option value="${filter}">${filter}</option>`)
+          .join("")}
             <option value="all" selected="selected">Show all</option>
         </select>
       </div>
@@ -37,9 +43,13 @@ const layout = (artworkDetails) => {
             acc.push(`
             <div class="gallery-child" hidden=false>
 
-              <img class="main__image" src="${"data:image/png;base64," + image.image_file}">
+              <img class="main__image" src="${
+                'data:image/png;base64,' + image.image_file
+              }">
               <div class="main__image-description">
-                <p class="main__username"><strong>${image.uploaded_by}</strong></p>
+                <p class="main__username"><strong>${
+                  image.uploaded_by
+                }</strong></p>
                 <p class="main__tags">${image.tags}</p>
                 <p class="main__description">${image.description}</p>
                 <span>${image.created_at}</span>
@@ -48,7 +58,7 @@ const layout = (artworkDetails) => {
           `);
             return acc;
           }, [])
-          .join("")}
+          .join('')}
           </div>
       </main>
     </body>
