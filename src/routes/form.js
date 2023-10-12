@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
 router.post("/", upload.single("avatar"), (req, res) => {
   // req.file is the `avatar` file
   const fileImg = req.file;
+  console.log(fileImg.originalname);
 
   if (!ALLOWED_TYPES.includes(fileImg.mimetype)) {
     res.status(400).send("<h1>File upload error</h1><p>Please upload an image file</p>");
