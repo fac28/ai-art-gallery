@@ -40,6 +40,7 @@ const form = () => {
 
             <label for="avatar" class="file_input_label form_btn">Choose File</label>
             <input type="file" class="file_input" id="avatar" name="avatar" required />
+            <div id="namePlaceholder"></div>    
 
             <fieldset>
               <legend>Please select one or more of the following tags</legend>
@@ -52,7 +53,19 @@ const form = () => {
             <button class="form_btn">Submit</button>
           </form>
         </main>
-
+      <script>
+        document.getElementById("avatar").addEventListener("change", (event) => {
+        const fileInput = event.target;
+        <!-- fileInput returns a Filelist js object -->
+        const fileNamePlaceholder = document.getElementById("namePlaceholder");
+        const imgName = fileInput.files && fileInput.files[0].name;  
+        if (imgName) {
+        fileNamePlaceholder.textContent = "Selected file: " + imgName}
+         else {
+        fileNamePlaceholder.textContent = "";
+        }
+        });
+      </script>
       <body>
   `;
 };

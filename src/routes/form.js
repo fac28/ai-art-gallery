@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
 router.post("/", upload.single("avatar"), (req, res) => {
   // req.file is the `avatar` file
   const fileImg = req.file;
+  console.log(fileImg.originalname);
 
   // req.body will hold the text fields, if there were any
   const { name, description } = req.body;
