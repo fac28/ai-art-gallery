@@ -256,6 +256,12 @@ fieldset {
   background-color: var(--primary-dark);
 }
 
+.main__delete-button {
+  margin: 1em;
+  padding: 1px 1.5px;
+  background-color: var(--primary-dark);
+}
+
 [aria-invalid='true'] {
   border-color: red;
 }

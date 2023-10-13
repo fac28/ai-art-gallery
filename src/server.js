@@ -34,6 +34,7 @@ const staticHandler = express.static("public");
 
 const galleryRoute = require("./routes/gallery");
 const formRoute = require("./routes/form");
+const deleteRoute = require("./routes/delete");
 
 // Add all the routes below this line
 
@@ -42,6 +43,7 @@ server.use(staticHandler);
 server.use("/", galleryRoute);
 server.use("/submit", formRoute);
 server.use("/uploads", express.static("uploads"));
+server.use("/delete", deleteRoute);
 
 // Testing will remove it in a bit
 server.get("/debug-sentry", function mainHandler (req, res) {
